@@ -25,7 +25,7 @@ use tauri_plugin_log::{fern::colors::ColoredLevelConfig, LogTarget};
 // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
 #[tauri::command]
 fn greet(name: &str) -> String {
-    info!("tauri: greet arg: {}", name);
+    info!("tauri: greet with arg: '{}'", name);
     format!("Hello, {}! You've been greeted from Rust!", name)
 }
 
