@@ -1,5 +1,6 @@
 <script lang="ts">
-  import Greet from './lib/Greet.svelte'
+  import Greet from "./lib/Greet.svelte";
+  import { info } from "tauri-plugin-log-api";
 </script>
 
 <main class="container">
@@ -17,15 +18,11 @@
     </a>
   </div>
 
-  <p>
-    Click on the Tauri, Vite, and Svelte logos to learn more.
-  </p>
+  <p>Click on the Tauri, Vite, and Svelte logos to learn more.</p>
 
   <div class="row">
     <Greet />
   </div>
-
-
 </main>
 
 <style>
