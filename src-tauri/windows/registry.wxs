@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <!-- these registry entries should be installed
+         to the target user's machine -->
+    <DirectoryRef Id="TARGETDIR">
+      <!-- groups together the registry entries to be installed -->
+      <!-- Note the unique `Id` we provide here -->
+      <Component Id="MyFragmentRegistryEntries" Guid="*">
+        <!-- the registry key will be under
+             HKEY_CURRENT_USER\Software\MyCompany\MyApplicationName -->
+        <!-- Tauri uses the second portion of the
+             bundle identifier as the `MyCompany` name
+             (e.g. `tauri-apps` in `com.tauri-apps.test`)  -->
+        <!-- PTEID\general -->
+        <RegistryKey
+          Root="HKLM"
+          Key="Software\PTEID\general"
+          Action="createAndRemoveOnUninstall"
+        >
+          <RegistryValue
+            Type="string"
+            Name="install_dirname"
+            Value="c:\\Program Files\\tauri-sidecard-cpp"
+          />
+          <RegistryValue
+            Type="string"
+            Name="certs_dir"
+            Value="c:\\Program Files\\tauri-sidecard-cpp\\certs"
+          />
+          <RegistryValue
+            Type="string"
+            Name="certs_dir_test"
+            Value="c:\\Program Files\\tauri-sidecard-cpp\\certs\\certs_test"
+          />
+        </RegistryKey>
+        <!-- Microsoft\Cryptography\Calais\SmartCards\Pteid (Gemsafe) 1 -->
+        <RegistryKey
+          Root="HKLM"
+          Key="Software\Software\Microsoft\Cryptography\Calais\SmartCards\Pteid (Gemsafe) 1"
+          Action="createAndRemoveOnUninstall"
+        >
+          <RegistryValue
+            Type="string"
+            Name="Smart Card Key Storage Provider"
+            Value="Microsoft Smart Card Key Storage Provider"
+          />
+
+          <RegistryValue
+            Type="string"
+            Name="Crypto Provider"
+            Value="Microsoft Base Smart Card Crypto Provider"
+          />    
+        </RegistryKey>
+        <!-- Microsoft\Cryptography\Calais\SmartCards\Pteid (Gemsafe) 2 -->
+        <RegistryKey
+          Root="HKLM"
+          Key="Software\Software\Microsoft\Cryptography\Calais\SmartCards\Pteid (Gemsafe) 2"
+          Action="createAndRemoveOnUninstall"
+        >
+          <RegistryValue
+            Type="string"
+            Name="Smart Card Key Storage Provider"
+            Value="Microsoft Smart Card Key Storage Provider"
+          />
+          <RegistryValue
+            Type="string"
+            Name="Crypto Provider"
+            Value="Microsoft Base Smart Card Crypto Provider"
+          />
+        </RegistryKey>
+        <!-- Microsoft\Cryptography\Calais\SmartCards\Pteid (Gemsafe) 3 -->
+        <RegistryKey
+          Root="HKLM"
+          Key="Software\Software\Microsoft\Cryptography\Calais\SmartCards\Pteid (Gemsafe) 3"
+          Action="createAndRemoveOnUninstall"
+        >
+          <RegistryValue
+            Type="string"
+            Name="Smart Card Key Storage Provider"
+            Value="Microsoft Smart Card Key Storage Provider"
+          />
+          <RegistryValue
+            Type="string"
+            Name="Crypto Provider"
+            Value="Microsoft Base Smart Card Crypto Provider"
+          />
+        </RegistryKey>
+        <!-- Microsoft\Cryptography\Calais\SmartCards\Pteid (Gemsafe) 4 -->
+        <RegistryKey
+          Root="HKLM"
+          Key="Software\Software\Microsoft\Cryptography\Calais\SmartCards\Pteid (Gemsafe) 4"
+          Action="createAndRemoveOnUninstall"
+        >
+          <RegistryValue
+            Type="string"
+            Name="Crypto Provider"
+            Value="Microsoft Base Smart Card Crypto Provider"
+          />
+          <RegistryValue
+            Type="string"
+            Name="Smart Card Key Storage Provider"
+            Value="Microsoft Smart Card Key Storage Provider"
+          />
+        </RegistryKey>
+
+
+        <!-- Microsoft\Cryptography\Calais\Readers\Gemplus USB SmartCard Reader 0 -->
+        <RegistryKey
+          Root="HKLM"
+          Key="Software\Microsoft\Cryptography\Calais\Readers\Gemplus USB SmartCard Reader 0"
+          Action="createAndRemoveOnUninstall"
+        >
+          <RegistryValue
+            Type="string"
+            Name="Device"
+            Value="Gemplus USB SmartCard Reader 0"
+          />
+          <RegistryValue
+            Type="multiString"
+            Name="Groups"
+            Value="SCard$DefaultReaders"
+          />
+        </RegistryKey>
+        <!-- Microsoft\Cryptography\Calais\Readers\Generic Smart Card Reader Interface 0 -->
+        <RegistryKey
+          Root="HKLM"
+          Key="Software\Microsoft\Cryptography\Calais\Readers\Generic Smart Card Reader Interface 0"
+          Action="createAndRemoveOnUninstall"
+        >
+          <RegistryValue
+            Type="string"
+            Name="Device"
+            Value="Generic Smart Card Reader Interface 0"
+          />
+          <RegistryValue
+            Type="multiString"
+            Name="Groups"
+            Value="SCard$DefaultReaders"
+          />
+        </RegistryKey>
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+</Wix>

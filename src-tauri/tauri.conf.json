@@ -23,6 +23,11 @@
             "sidecar": true
           }
         ]
+      },
+      "fs": {
+        "scope": [
+          "$RESOURCE/*"
+        ]
       }
     },
     "bundle": {
@@ -39,7 +44,42 @@
       "externalBin": [
         "binaries/app"
       ],
-      "resources": []
+      "resources": [
+        "./libcrypto-1_1-x64.dll",
+        "./libcurl769.dll",
+        "./libpng16.dll",
+        "./libssl-1_1-x64.dll",
+        "./libzip.dll",
+        "./openjp2.dll",
+        "./pteid-poppler.dll",
+        "./pteidapplayer.dll",
+        "./pteidcardlayer.dll",
+        "./pteidcommon.dll",
+        "./pteidDlgsWin32.dll",
+        "./pteidlib.dll",
+        "./xerces-c_3_2.dll",
+        "./xsec_2_0.dll",
+        "./certs/BaltimoreCyberTrustRoot.der",
+        "./certs/cacerts.pem",
+        "./certs/CartaodeCidadao001.der",
+        "./certs/CartaodeCidadao002.der",
+        "./certs/CartaodeCidadao003.der",
+        "./certs/CartaodeCidadao004.der",
+        "./certs/CartaodeCidadao005.der",
+        "./certs/CartaodeCidadao006.der",
+        "./certs/DigicertRoot.der",
+        "./certs/ECRaizEstado002.der",
+        "./certs/ECRaizEstado_MC.der",
+        "./certs/GlobalChambersignRoot-2008.der",
+        "./certs/Multicert_Root_01.der",
+        "./certs/Usertrust_RSA_Certification_Authority.der"
+      ],
+      "windows": {
+        "wix": {
+          "fragmentPaths": ["windows\\registry.wxs"],
+          "componentRefs": ["MyFragmentRegistryEntries"]
+        }
+      }
     },
     "security": {
       "csp": null
