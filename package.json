@@ -10,7 +10,10 @@
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "tauri": "tauri",
     "tauri:dev": "tauri dev",
-    "package": "node scripts/move-binary.js"
+    "package": "node scripts/move-binary.js",
+    "cargo:build":"cargo build tauri",
+    "cargo:build:debug": "cargo tauri build --debug",
+    "cargo:build:win": "./buildwin.bat"
   },
   "dependencies": {
     "@tauri-apps/api": "^1.2.0",
